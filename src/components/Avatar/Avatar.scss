@@ -1,0 +1,42 @@
+@import '../../sass/Colores';
+
+.avatar{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  > .img-avatar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    > span , > img{
+      position: relative;
+      &.circle::before{
+        content: '';
+        position: absolute;
+        height: 13%;
+        width: 13%;
+        border-radius: 50%;
+        border:1px solid #FAFAFA;
+        background-color: $primary;
+        top:86%;
+        left:86%;
+        transform: translate(-50%,-50%);
+      }
+      display: inline-block;
+      border:1px solid $primary;
+      border-radius: 50%;
+      background: #ccc;
+      &.blue{
+        border:1px solid $secondary;
+      }
+      //&.blue.circle{ &::before{background-color: $secondary;}}
+    }
+    
+  }
+  > .avatar-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

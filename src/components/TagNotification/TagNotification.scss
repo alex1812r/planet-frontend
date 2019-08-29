@@ -1,0 +1,42 @@
+.TagNotification{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  .TagNotification-user{
+    width: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    .avatar{
+      display: block;
+      margin-right: .5rem;
+      *{margin: 0;}
+    }
+    .TagNotification-user-data{
+
+      width: 0;
+      flex-grow: 1;
+      h4{
+        margin-bottom: .5rem; 
+        span{
+          display: inline-block;
+          font-weight: normal; 
+          margin-left: 10px;
+        }
+      }
+      p span{
+        display: inline-block;
+        margin-left: 10px;
+        color:#ccc;
+      }
+    }
+  }
+  .TagNotification-controls{
+    width: auto;
+    height: 100%;
+    button{
+      margin-right: 10px;
+    }
+  }
+}

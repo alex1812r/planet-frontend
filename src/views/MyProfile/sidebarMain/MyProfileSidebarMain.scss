@@ -1,0 +1,20 @@
+.MyProfileSidebarMain{
+  height: 100%;
+  padding: 1rem;
+  padding-top: 1.2rem;
+  > div{
+    //background: #000;
+    padding-right: 1rem;
+    margin-bottom: 1.5rem;
+    h4{
+      margin-bottom: .5rem;
+    }
+  }
+  > section {
+    margin-bottom: 2rem;
+    h4{
+      margin-bottom: .5rem;
+    }
+    //background: #ff8000;
+  }
+}

@@ -1,0 +1,28 @@
+section.MyProfile{
+  > div{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    &.MyProfile-reputation{
+      display: flex;
+      justify-content: space-around;
+      > div{
+        width: 50%;
+        text-align: center;
+        @media (max-width:991px){
+          &{
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+        }
+        h4{
+          margin-bottom: .5rem;
+        }
+      }
+    }
+    &.MyProfile-notifications{
+      h4{
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

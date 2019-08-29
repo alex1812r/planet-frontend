@@ -1,0 +1,53 @@
+$header-backgroud:#EEEEEE;
+$sidebar-background:#FAFAFA;
+$border:1px solid #ccc;
+
+.wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+  & > aside{
+    //height: 100%;
+    border-right: $border;
+    background: #ffff;
+  }
+  main{
+    width: 0;
+    flex-grow: 1;
+    //background: gray;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    & > header{
+      width: 100%;
+      background: $header-backgroud;
+      border-bottom: $border;
+    }
+    & > section.main{
+      @media (max-width:991px) {
+        padding-top:2.5rem; 
+      }
+      height: 0;
+      flex-grow: 1;
+      display:flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      & > section{
+        //max-width: 50%;
+        overflow-y: auto;
+        width: 0;
+        padding:1rem ;
+        flex-grow: 1;
+        height: 100%;
+        //background: red;
+      }
+      aside{
+        height: 100%;
+        background: $sidebar-background;
+        border-left: $border;
+      }
+    }
+  }
+}

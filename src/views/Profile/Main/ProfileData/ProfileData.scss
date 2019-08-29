@@ -1,0 +1,48 @@
+.profile-data{
+  display: flex;
+  justify-content: space-between;
+  .data{
+    display: flex;
+    justify-content: flex-start;
+    width: 0;
+    flex-grow: 1;
+    border-right: 0;
+    
+    .avatar{
+      display: block;
+    }
+
+    .data-profile{
+      //max-width: 30%;
+      padding-left: 1rem;
+      > div, > span{
+        display: block;
+        margin-bottom: .3rem;
+        &.id{ color: #ccc; }
+      }
+      .name-user{
+        .name{
+          font-weight: bolder;
+          margin-right: 10px;
+        }
+      }
+    }
+
+  }
+  .profile-reputation-badges{
+    max-width: 30%;
+    text-align: end;
+    > span{
+      display: block;
+      margin-bottom: .5rem;
+      font-weight: bolder;
+    }
+    i{
+      font-size: 25px;
+      color:#ccc;
+    }
+    div{
+      margin-bottom: 1rem;
+    }
+  }
+}

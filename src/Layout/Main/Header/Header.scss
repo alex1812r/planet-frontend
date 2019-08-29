@@ -1,0 +1,115 @@
+header{
+  //transition: all .5s;
+  height: auto;
+  padding: 0px 20px;
+  .toogle-header-nav{
+    display: none;
+  }
+  
+  nav{
+    overflow: hidden;
+    transition: .5s;
+    display: flex;
+    height: 2.5rem;
+    > .header-nav{
+      a{
+        text-decoration: none;
+        color:rgb(184, 182, 182);
+        span{
+          img{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width:991px){
+    min-height:2.5rem !important;
+    position: fixed;
+    z-index: 45;
+    nav{
+      // display: none;
+      max-height: 0;
+      >*{
+        opacity: 0;
+      }
+    }
+    .toogle-header-nav{
+      display: block;
+      input[type="checkbox"]{
+        display: none;
+        & + label{
+          position: fixed; 
+          right: 1rem;
+          top:.75rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    nav.active{
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px;
+      > *{
+        opacity: 1;
+      }
+      > .header-search{
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      > .header-nav{
+        a{
+          padding: 10px 15px;
+          display: block;
+          width: 100%;
+          &:hover{
+            color:rgb(155, 151, 151);
+            background: #cccc;
+          }
+          span{
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media (min-width:991px){
+    padding: 5px 20px;
+    nav{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      > .header-search{
+        max-width: 40%;
+        flex-grow: 1; 
+      }
+      .header-nav{
+        width: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        a{
+          padding: 10px;
+          height: 100%; 
+          span{
+            width: 100%;
+            display: flex;
+            //flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          &:hover{
+            color:rgb(155, 151, 151);
+          }
+        } 
+      }
+    }
+  }
+}

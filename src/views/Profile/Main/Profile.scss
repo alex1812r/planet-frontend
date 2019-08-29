@@ -1,0 +1,24 @@
+.profile{
+  > div{
+    padding: 1rem;
+    border:1px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+  }
+  .profile-about{
+    .buttons-about-profile{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+      button{
+        width: 20%;
+      }
+    }
+    h4{
+      margin-bottom: 1rem;
+    }
+    p{
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.circled-container{
+  display: inline-block;
+}
+.circled-icon{
+  border-radius: 50%;
+  border:1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
