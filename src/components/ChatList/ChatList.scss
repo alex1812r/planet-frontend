@@ -1,0 +1,13 @@
+#chat-list{
+    padding: 1em;
+    button{
+        outline:none;
+    }
+    a{
+        display: block;
+        padding: .5em;
+        margin-top: .5em;
+        border: 1px solid #ddd;
+        border-radius: 1em;
+    }
+}

@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux'
 
 const user = (state = {},action) => {
-  
+  if(action.type === 'SAVE_USER'){
+    return(
+      action.data
+    )
+  }
   return(
     state
   )
@@ -10,14 +14,30 @@ const user = (state = {},action) => {
 const people = (state = [],action) => {
   if(action.type === 'SAVE_PEOPLE' ){
     return(
-      action.people
+      action.data
     )
   }
   return(state)
 }
 
-const chat = (state = [],action) => {
+const groups = (state = [],action)=> {
+  if(action.type === 'SAVE_GROUPS'){
+    return action.data
+  }
+  return state
+}
+
+const chat = (state = {},action) => {
   if(action.type === 'SET_CHAT'){
+    return(
+      action.data
+    )
+  }
+  return(state)
+}
+
+const channels = (state=[],action) => {
+  if(action.type === 'SET_CHANNEL_LIST'){
     return(
       action.data
     )
@@ -28,5 +48,7 @@ const chat = (state = [],action) => {
 export default combineReducers({
   user,
   people,
-  chat
+  groups,
+  chat,
+  channels
 })

@@ -6,18 +6,14 @@ import Layout from './Layout/Layout'
 import Hc from './Helpers/HoloChain'
 
 class Planet extends React.Component{
-  state = {
-    check:false,
-  }
+
   componentDidMount = () => {
     Hc({
       functionName:'check_register',
       callback: response => {
         if(response.Ok.registered){
-          this.setState({
-            check: response.Ok.registered
-          })
-          this.loadPeople()
+          this.props.SaveUser(JSON.parse(response.Ok.me.App[1]))
+          this.loadData()
         }else{
           this.registerUser()
         }
@@ -25,15 +21,27 @@ class Planet extends React.Component{
     })
   }
 
-  loadPeople = () => {
+  loadData = () => {
     Hc({
       functionName:'get_all_users',
       callback: response => {
-        console.log('get all users :', response)
-        this.props.SavePeople(response.Ok)
+        if(response.Ok){
+          this.props.SavePeople(response.Ok)
+        }
+        //console.log('get all users :', response)
+      }
+    })
+    Hc({
+      functionName:'get_all_groups',
+      callback:response => {
+        if(response.Ok){
+          this.props.SaveGroups(response.Ok)
+        }
       }
     })
   }
+
+
 
   registerUser = () => {
     let username = ''
@@ -44,31 +52,48 @@ class Planet extends React.Component{
       functionName:'create_user',
       params: {username},
       callback: response => {
-        console.log(response)
+        if(response.Ok){
+          this.props.SaveUser({
+            address: response.Ok,
+            username,
+          })
+        }
       }
     })
   }
 
   render(){
-    if(this.state.check){
-      return(
-        <Layout />
-      )
-    }else{
-      return(
-      <>
-      </>)
-    }
+    
+    return(
+      this.props.user && 
+        Object.keys(this.props.user).length 
+          ? <Layout />
+            : <></>
+    )
   }
 }
 
+const mapStateToProps = state => ({ user:state.user })
+
 const mapDispatchToProps = dispatch => ({
-  SavePeople: (people=[]) => {
+  SaveUser: (data = {}) =>{
     dispatch({
-      type:'SAVE_PEOPLE',
-      people
+      type:'SAVE_USER',
+      data
     })
   },
+  SavePeople: (data=[]) => {
+    dispatch({
+      type:'SAVE_PEOPLE',
+      data
+    })
+  },
+  SaveGroups: (data =[]) => {
+    dispatch({
+      type:'SAVE_GROUPS',
+      data
+    })
+  } 
 })
 
-export default connect(()=>({}),mapDispatchToProps)(Planet)
+export default connect(mapStateToProps,mapDispatchToProps)(Planet)

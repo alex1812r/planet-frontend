@@ -1,0 +1,67 @@
+.group{
+  width: 100%;
+  height:100%;
+  > section{
+    padding:1rem 1.5rem;
+    border-bottom: 1px solid #ccc;
+    .data-group{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .name-group{
+        max-width: 30%;
+        > h4 span{margin-right: 5px;}
+        >span{color:#ccc;}
+      }
+      .about-more-group{
+        padding-left: .5rem;
+        width: 0;
+        flex-grow: 1;
+        text-align: end;
+        button{
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .people-group{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      //align-items: center;
+      > div{
+        text-align: center;
+        margin-right: 1rem;
+        width: auto;
+        height: 100%;
+        > h4{ margin-bottom: 5px;}
+      }
+    }
+    .controls{
+      margin-bottom: 1.5rem;
+      button{
+        margin-right: 10px;
+        max-width: 20%;
+        width: 200px;
+      }
+    }
+    .date-discussion{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      > div.date-line{
+        width: 0;
+        flex-grow: 1;
+        height: 1px;
+        background: #ccc;
+      }
+      span{
+        display: block;
+        width: auto;
+        max-width: 100%;
+        padding: .5rem;
+      }
+    }
+  } 
+
+}

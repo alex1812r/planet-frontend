@@ -1,0 +1,14 @@
+.TagGroups-search{
+  padding: 1rem;
+  .TagGroups-controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    > div {
+      width: 0;
+      flex-grow: 1;
+      padding-right: .5rem;
+    }
+  }
+}

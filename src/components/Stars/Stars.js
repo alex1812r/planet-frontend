@@ -2,13 +2,13 @@ import React from 'react'
 import './Stars.scss';
 
 export default function Stars(props){
-  const range = props.range ? props.range : 0
+  const reputation = props.reputation ? props.reputation : 0
   const Stars = [{},{},{},{},{}]
   return(
     <div className="range-stars">
     {
       Stars.map((s,i)=>(
-        i < range ?
+        i < reputation ?
         <Star  key={i} className="active"/>
         : <Star key={i} />
       ))

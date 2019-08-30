@@ -1,0 +1,37 @@
+.discussion{
+  width: 100%;
+  > .msj-discussion{
+    width: 100%;
+    display: flex;
+    .avatar{
+      display: block;
+      > *{margin:0}
+    }
+    .wrap-data-msj{
+      padding-left: .5rem;
+      width: 0;
+      flex-grow: 1;
+      > .data-msj{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        //border:1px dashed #ccc;
+        > .identification-msj{
+          width: 0;
+          flex-grow: 1; 
+          display: flex;
+          //justify-content: space-around;
+          align-items: center;
+         // border: 1px dashed green;
+          > *{margin-right: .5rem;}
+          .date-msj{
+            color:#ccc;
+          }
+        }
+        .controls-msj{
+          //border: 1px dashed orange;
+        }
+      }
+    }
+  } 
+}

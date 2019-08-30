@@ -30,6 +30,7 @@
       &.blue{
         border:1px solid $secondary;
       }
+      &.border-none{border:none !important;}
       //&.blue.circle{ &::before{background-color: $secondary;}}
     }
     

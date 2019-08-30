@@ -1,0 +1,41 @@
+#chat{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1em;
+    #messages{
+        border:1px solid #eee;
+        border-radius: 1em;
+        flex-grow: 1;
+        overflow: auto; 
+        padding-bottom: .6em;
+        div{
+            width: 55%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            padding: .6em;
+            border-radius: .7em;
+            background-color: #eee;
+            margin-top:.6em;
+        }
+    }
+    #prompt{
+        display: flex;
+        input{
+            flex-grow: 1;
+            border-radius: 1em;
+            outline: none;
+        }
+        button{
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                height: 1.5em;
+                filter: brightness(50%);
+                transform: scale(1.4);
+            }
+        }
+    }
+}

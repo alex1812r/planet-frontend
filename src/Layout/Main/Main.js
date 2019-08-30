@@ -6,6 +6,8 @@ import MyProfile from '../../views/MyProfile/MyProfile'
 import Profile from '../../views/Profile/Main/Profile'
 import People from '../../views/People/People'
 import Chat from '../../views/Chat'
+import Group from '../../views/Group/Group'
+import Groups from '../../views/Groups/Groups'
 
 export default class Main extends Component{
   render(){
@@ -16,9 +18,15 @@ export default class Main extends Component{
           <section>
             <Switch>
               <Route exact path="/" render={()=>(<MyProfile/>)}/>
-              <Route exact path="/Profile" render={()=>(<Profile />)} />
-              <Route exact path="/People" render={()=>(<People />)} />
+              <Route exact path="/profile" render={()=>(<Profile />)} />
+              <Route exact path="/people" render={()=>(<People />)} />
               <Route path="/chat" render={()=>(<Chat />)} />
+              <Route exact path="/group/:id" render={({location})=>{
+                const id = location.pathname.replace('/group/','')
+                return <Group id={id} />
+              }}/>
+              <Route exact path="/groups" render={()=>(<Groups />)}/>
+              <Route render={()=>(<>ERROR 404 THE PAGE NOT FOUND</>)}/>
             </Switch>
           </section>
           <SidebarMain />

@@ -19,14 +19,15 @@ button{
     border: 1px solid $primary;
   }
   &.btn{
-    display: block;
+    display: inline-block;
     border-radius: 5px;
     font-weight: bolder;
     padding: 7px 20px;
   }
   &:disabled{
     background-color:rgba(#ccc,0.5);
-    color:rgb(182, 179, 179)
+    color:rgb(182, 179, 179);
+    cursor: auto;
   }
   
   &.btn-primary{

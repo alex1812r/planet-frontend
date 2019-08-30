@@ -29,11 +29,11 @@ export default function ProfileData(){
       <div className="profile-reputation-badges">
         <span>Reputation</span>
         <div className="profile-reputation">
-          <Stars range={4}/>
+          <Stars reputation={4}/>
         </div>
         <span>Recent Badges</span>
         <div className="profile-badges">
-          <Stars range={3} />
+          <Stars reputation={3} />
         </div>
       </div>
 

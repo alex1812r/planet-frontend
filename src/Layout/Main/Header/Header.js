@@ -5,6 +5,7 @@ import Icon2 from '../../../icons/ICONOS BARRA SUPERIOR 2.png'
 import Icon3 from '../../../icons/ICONOS BARRA SUPERIOR 3.png'
 import Icon4 from '../../../icons/ICONOS BARRA SUPERIOR 4.png'
 import Icon5 from '../../../icons/ICONOS BARRA SUPERIOR 5.png'
+import IconChat from '../../../icons/ICONOS BARRA SUPERIOR CHAT.png'
 
 import './Header.scss'
 
@@ -54,13 +55,17 @@ export default class Header extends Component {
               <span><img src={Icon1} alt="icon1"/></span>
               Accounts
             </Link>
-            <Link to="/">
+            <Link to="/Groups">
               <span><img src={Icon5} alt="icon5"/></span>
               Groups
             </Link>
             <Link to="/People">
               <span><img src={Icon2} alt="icon2"/></span>
               People
+            </Link>
+            <Link to="/Chat">
+              <span><img src={IconChat} alt="icon2"/></span>
+              Chat
             </Link>
           </div>
         </nav>

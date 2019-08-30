@@ -1,7 +1,8 @@
-import React,{Component} from 'react';
-import {Switch,Route} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 import './SidebarMain.scss'
 
+import ChatList from '../../../components/ChatList'
 import MyProfile from '../../../views/MyProfile/sidebarMain/MyProfileSidebarMain'
 
 export default class SidebarMain extends Component {
@@ -46,6 +47,7 @@ export default class SidebarMain extends Component {
         <div className="wrap-sidebarMain">
           <Switch>
             <Route exact path="/" >{<MyProfile />}</Route>
+            <Route path="/chat" >{<ChatList />}</Route>
           </Switch>
         </div>
 

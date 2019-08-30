@@ -8,6 +8,8 @@
     .img-avatar{margin-bottom: 0;}
   }
   .data{
+    //width: 0;
+    //flex-grow: 1;
     width: 100%;
     padding-left: 10px;
     div{
@@ -15,14 +17,15 @@
       display: flex;
       margin-bottom: 5px;
       align-items: center;
-      justify-items: space-between;
+      justify-content: space-between;
       // span{
       //   display: block;
       // } 
-      span.name{
+      .name{
         width: auto;
         font-weight: bolder;
         max-width: 60%;
+        text-decoration: none;
       }
       .Hearts{
         width: 0;

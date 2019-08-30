@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux'
 import './MyProfile.scss'
 
 import BadgesGroup from '../../components/BadgesGroup/BadgesGroup'
@@ -12,7 +13,7 @@ import icon3 from '../../icons/ICONOS BADGES 3.png'
 import icon4 from '../../icons/ICONOS BADGES 4.png'
 import icon5 from '../../icons/ICONOS BADGES 5.png'
 
-export default class MyProfile extends Component {
+class MyProfile extends Component {
   state ={
     id:'123456',
     name:'Name',
@@ -33,21 +34,22 @@ export default class MyProfile extends Component {
     ]
   }
   render() {
-
+    //console.log('this.props.user :', this.props.user);
+    const {username,address} = this.props.user 
     return (
       <section className="MyProfile">
         <div className="box">
           <TagMyProfile 
-            id={this.state.id}
-            name={this.state.name}
-            userName={this.state.userName}
+            id={address.substring(0,5)}
+            name={username}
+            userName={username}
             description={this.state.description}
           />
         </div>
         <div className="box MyProfile-reputation">
           <div>
             <h4>Reputation</h4>
-            <Stars range={3}/>
+            <Stars reputation={3}/>
           </div>
           <div>
             <h4>Badges</h4>
@@ -66,3 +68,7 @@ export default class MyProfile extends Component {
     )
   }
 }
+
+const mapStateTopProps = state => ({user: state.user})
+
+export default connect(mapStateTopProps,()=>({}))(MyProfile)

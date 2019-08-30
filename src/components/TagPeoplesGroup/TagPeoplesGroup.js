@@ -1,6 +1,6 @@
 import React from 'react'
 import './TagPeoplesGroup.scss'
-import TagPeople from '../TagPeople/TagPeople';
+import TagPeople from '../TagPeople/TagPeople'
 
 export default function TagPeoplesGroup({people}){
   return(
@@ -10,9 +10,10 @@ export default function TagPeoplesGroup({people}){
         people.map((p,i)=>(
           <TagPeople 
             key={i}
-            name={p.name || ( p.entry && p.entry.name)}
-            username={p.username || ( p.entry &&  p.entry.username)}
+            name={p.username || ( p.entry && (p.entry.username || p.entry.title))}
+            username={p.username || ( p.entry && (p.entry.username || p.entry.title))}
             active={p.active || ( p.entry &&  p.entry.active)}
+            url={"/group/" + p.address || (p.entry && p.entry.address)}
           />
         ))
       }
