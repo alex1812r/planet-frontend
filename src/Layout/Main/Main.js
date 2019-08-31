@@ -22,10 +22,7 @@ export default class Main extends Component{
               <Route exact path="/people" render={()=>(<People />)} />
               <Route path="/chat/:id" render={({match})=>(<Chat id={match.params.id} />)} />
               <Route path="/chat" render={()=>(<Chat />)} />
-              <Route exact path="/group/:id" render={({location})=>{
-                const id = location.pathname.replace('/group/','')
-                return <Group id={id} />
-              }}/>
+              <Route path="/group/:id" render={({match})=>(<Group id={match.params.id} />)}/>
               <Route exact path="/groups" render={()=>(<Groups />)}/>
               <Route render={()=>(<>ERROR 404 THE PAGE NOT FOUND</>)}/>
             </Switch>

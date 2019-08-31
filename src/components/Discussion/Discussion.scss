@@ -1,5 +1,5 @@
 .discussion{
-  button{
+   button{
     margin-top: .5rem;
     padding: 2px 10px;
   }
@@ -40,11 +40,31 @@
         width: 100%;
         //border: 1px dashed red;
         padding-left: 1rem;
-        padding-top:.3em; 
-        > div {
-          p{
-            font-size: 0.8rem;
+        padding-top:.3em;
+        #form-add-comment{
+          width: 100%;
+          margin-bottom: .5rem;
+           > div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            //border:1px dashed #ccc;
+            input{
+              width: 0;
+              flex-grow: 1;
+              border-radius: 1em;
+              padding: 2px 10px;
+            }
+            > div{
+              padding-left: .5rem;
+              //border: 1px solid red;
+              button{margin:0;}
+            }
           }
+        }
+        > div.comment {
+          p{font-size: .8rem;}
         }
       }
     }

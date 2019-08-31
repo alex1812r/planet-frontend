@@ -65,10 +65,8 @@ class Chat extends Component{
         })
         this.inputRef.current.value = ''
         setTimeout(() => {
-            console.log('object :', this.chatRef.current);
             this.chatRef.current.scroll(0,this.chatRef.current.scrollHeight)
         }, 0);
-        console.log('zzz, ',{ entry: { content: text }, channel_address: this.props.id })
         Hc({
             functionName: 'send_message',
             params: { entry: { content: text }, channel_address: this.props.id },

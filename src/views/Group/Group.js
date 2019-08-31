@@ -10,6 +10,24 @@ class Group extends React.Component{
 
   state = {
     discussion:'',
+    groupDiscusions: []
+  }
+
+  componentDidMount = () => {
+    this.loadDiscussions()
+  }
+
+  loadDiscussions = () => {
+    Hc({
+      functionName:'get_group_discussions',
+      params:{
+        group_addr:this.props.id
+      },
+      callback: response => {
+        if(response.Ok)
+        this.setState( { groupDiscusions: response.Ok } )
+      }
+    })
   }
 
   onKeyUp = e => {
@@ -21,14 +39,17 @@ class Group extends React.Component{
 
   handleAddDiscussion = e => {
     e.preventDefault()
+    const params = {
+      entry: { description: this.state.discussion },
+      group_addr: this.props.id,
+    }
     Hc({
-      functionName:'create_discussion',
-      params:{
-        entry:{discussion:{description:this.state.discussion}},
-        group_addr:this.props.id,
-      },
-      callback : response => {
-        console.log(response)
+      functionName: 'create_discussion',
+      params,
+      callback: response => {
+        // console.log( response )
+        this.setState({ discussion:'' })
+        this.loadDiscussions()
       }
     })
   }
@@ -100,7 +121,7 @@ class Group extends React.Component{
                 </div>
               </div>
             </form>
-            <Discussion />
+            <Discussion publications={this.state.groupDiscusions} />
           </section>
         </div>
       )
