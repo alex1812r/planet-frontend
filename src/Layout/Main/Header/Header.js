@@ -42,9 +42,7 @@ export default class Header extends Component {
           </div>
           <div className="header-nav">
             <Link to="/">
-            <span>
-              <img src={Icon4} alt="icon4" />
-            </span>
+              <span><img src={Icon4} alt="icon4" /></span>
               Home
             </Link>
             <Link to="/">
@@ -55,15 +53,15 @@ export default class Header extends Component {
               <span><img src={Icon1} alt="icon1"/></span>
               Accounts
             </Link>
-            <Link to="/Groups">
+            <Link to="/groups">
               <span><img src={Icon5} alt="icon5"/></span>
               Groups
             </Link>
-            <Link to="/People">
+            <Link to="/people">
               <span><img src={Icon2} alt="icon2"/></span>
               People
             </Link>
-            <Link to="/Chat">
+            <Link to="/chat">
               <span><img src={IconChat} alt="icon2"/></span>
               Chat
             </Link>

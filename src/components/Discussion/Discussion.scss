@@ -1,4 +1,8 @@
 .discussion{
+  button{
+    margin-top: .5rem;
+    padding: 2px 10px;
+  }
   width: 100%;
   > .msj-discussion{
     width: 100%;
@@ -22,16 +26,28 @@
           display: flex;
           //justify-content: space-around;
           align-items: center;
-         // border: 1px dashed green;
+          // border: 1px dashed green;
           > *{margin-right: .5rem;}
           .date-msj{
             color:#ccc;
           }
         }
-        .controls-msj{
-          //border: 1px dashed orange;
+        // .controls-msj{
+        //   border: 1px dashed orange;
+        // }
+      }
+      .comments{
+        width: 100%;
+        //border: 1px dashed red;
+        padding-left: 1rem;
+        padding-top:.3em; 
+        > div {
+          p{
+            font-size: 0.8rem;
+          }
         }
       }
     }
   } 
 }
+

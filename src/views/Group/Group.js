@@ -1,12 +1,38 @@
 import React from 'react'
 import './Group.scss'
 import { connect } from 'react-redux'
-//import Hc from '../../Helpers/HoloChain'
+import Hc from '../../Helpers/HoloChain'
 
 import TagPeople from '../../components/TagPeople/TagPeople';
 import Discussion from '../../components/Discussion/Discussion'
 
 class Group extends React.Component{
+
+  state = {
+    discussion:'',
+  }
+
+  onKeyUp = e => {
+    //console.log(e.target.value)
+    this.setState({
+      discussion: e.target.value
+    })
+  }
+
+  handleAddDiscussion = e => {
+    e.preventDefault()
+    Hc({
+      functionName:'create_discussion',
+      params:{
+        entry:{discussion:{description:this.state.discussion}},
+        group_addr:this.props.id,
+      },
+      callback : response => {
+        console.log(response)
+      }
+    })
+  }
+
   render(){
     const group = this.props.groups.filter(g => (g.address === this.props.id))
     if(group.length  !== 0){
@@ -61,6 +87,19 @@ class Group extends React.Component{
               <span>30 - 08 - 19</span>
               <div className="date-line"></div>
             </div>
+            <form id="form-add-publications" onSubmit={this.handleAddDiscussion}>
+              <div>
+                <textarea 
+                  defaultValue={this.state.discussion}
+                  name="discussion" 
+                  onKeyUp={this.onKeyUp} 
+                  placeholder="type here your publication"
+                  />
+                <div>
+                  <button type="submit">Publish</button>
+                </div>
+              </div>
+            </form>
             <Discussion />
           </section>
         </div>

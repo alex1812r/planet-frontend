@@ -20,6 +20,7 @@ export default class Main extends Component{
               <Route exact path="/" render={()=>(<MyProfile/>)}/>
               <Route exact path="/profile" render={()=>(<Profile />)} />
               <Route exact path="/people" render={()=>(<People />)} />
+              <Route path="/chat/:id" render={({match})=>(<Chat id={match.params.id} />)} />
               <Route path="/chat" render={()=>(<Chat />)} />
               <Route exact path="/group/:id" render={({location})=>{
                 const id = location.pathname.replace('/group/','')

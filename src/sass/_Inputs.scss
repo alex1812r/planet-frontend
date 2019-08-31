@@ -2,10 +2,11 @@
 
 $disabled:1px solid #EBEBEB;
 
-input{
+input,textarea{
   padding: 5px 10px;
   border: 1px solid #ccc;
   background: none;
+  outline: none;
 }
 
 button{
@@ -15,8 +16,14 @@ button{
   text-align: center;
   padding: 5px 20px;
   cursor: pointer;
+  outline: none;
   &.primary{
     border: 1px solid $primary;
+  }
+  &:hover{
+    border:1px solid $primary;
+    background-color: rgba($primary,0.4);
+    color:$primary;
   }
   &.btn{
     display: inline-block;
