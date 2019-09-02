@@ -4,10 +4,12 @@ import Hc from '../../Helpers/HoloChain'
 import './Groups.scss'
 import InputSearch from '../../components/inputSearch/InputSearch';
 import TagPeoplesGroup from '../../components/TagPeoplesGroup/TagPeoplesGroup'
+import Modal from '../../components/Modal/Modal'
 
 class Groups extends React.Component{
   state ={
-    filter:''
+    filter:'',
+    modal:false
   }
 
   filterObjects = ( str, arr ) => {
@@ -19,30 +21,36 @@ class Groups extends React.Component{
   }
 
   handleAddGroup = () => {
-    let groupName = ''
+    //let groupName = ''
     
-    do{
-      groupName = window.prompt('Insert Group Name')
-    }while(groupName === '') 
+    // do{
+    //   groupName = window.prompt('Insert Group Name')
+    // }while(groupName === '') 
 
-    groupName && groupName !== ''  &&
+    // groupName && groupName !== ''  &&
     
-    Hc({
-      functionName: 'create_group',
-      params:{
-        entry:{
-          title: groupName,
-          description:'',
-          values: '',
-          goals: '',
-          purpose:'',
-          vision:''
-        }
-      },
-      callback: response => {
-        console.log(response)
-        this.reloadGroups()
-      }
+    // Hc({
+    //   functionName: 'create_group',
+    //   params:{
+    //     entry:{
+    //       title: groupName,
+    //       description:'',
+    //       values: '',
+    //       goals: '',
+    //       purpose:'',
+    //       vision:''
+    //     }
+    //   },
+    //   callback: response => {
+    //     console.log(response)
+    //     this.reloadGroups()
+    //   }
+    // })
+  }
+
+  handleShowModal = () => {
+    this.setState({
+      modal: this.state.modal ? false : true
     })
   }
 
@@ -58,18 +66,26 @@ class Groups extends React.Component{
   }
   render(){
     return(
+      <>
      <div className="TagGroups-search">
        <div className="TagGroups-controls">
           <InputSearch onChange={(e)=>{this.setState({filter:e.target.value})}}/>
-          <button onClick={this.handleAddGroup}>Add Group</button>
+          <button onClick={this.handleShowModal}>Add Group</button>
        </div>
         {
           this.props.groups &&
           <TagPeoplesGroup 
             people={this.filterObjects(this.state.filter,this.props.groups)}
+            url='group/'
           />
         }
       </div>
+      <Modal 
+        active={this.state.modal}
+        handleShowModal={this.handleShowModal}
+      >
+      </Modal>
+      </>
     )
   }
 }

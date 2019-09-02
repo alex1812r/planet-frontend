@@ -41,29 +41,29 @@ export default class Header extends Component {
             <InputSearch />
           </div>
           <div className="header-nav">
-            <Link to="/">
-              <span><img src={Icon4} alt="icon4" /></span>
-              Home
-            </Link>
-            <Link to="/">
-              <span><img src={Icon3} alt="icon3"/></span>
-              Settings
-            </Link>
-            <Link to="/">
-              <span><img src={Icon1} alt="icon1"/></span>
-              Accounts
-            </Link>
             <Link to="/groups">
               <span><img src={Icon5} alt="icon5"/></span>
               Groups
             </Link>
+            <Link to="/chat">
+              <span><img src={IconChat} alt="icon2"/></span>
+              peacemaking
+            </Link>
+            <Link to="/">
+              <span><img src={Icon1} alt="icon2"/></span>
+              Direction
+            </Link>
+            <Link to="/">
+              <span><img src={Icon3} alt="icon2"/></span>
+              Synergy
+            </Link>
+            <Link to="/">
+              <span><img src={Icon4} alt="icon2"/></span>
+              Commons
+            </Link>
             <Link to="/people">
               <span><img src={Icon2} alt="icon2"/></span>
               People
-            </Link>
-            <Link to="/chat">
-              <span><img src={IconChat} alt="icon2"/></span>
-              Chat
             </Link>
           </div>
         </nav>

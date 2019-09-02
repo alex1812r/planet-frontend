@@ -25,6 +25,7 @@ class People extends React.Component{
           this.props.people &&
           <TagPeoplesGroup 
             people={this.filterObjects(this.state.filter,this.props.people)}
+            url='profile/'
           />
         }
       </div>

@@ -6,9 +6,7 @@ const user = (state = {},action) => {
       action.data
     )
   }
-  return(
-    state
-  )
+  return state
 }
 
 const people = (state = [],action) => {

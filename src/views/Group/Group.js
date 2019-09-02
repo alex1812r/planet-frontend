@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Hc from '../../Helpers/HoloChain'
 
 import TagPeople from '../../components/TagPeople/TagPeople';
-import Discussion from '../../components/Discussion/Discussion'
+import Discussion from '../../components/Discussions/Discussions'
 
 class Group extends React.Component{
 
@@ -30,17 +30,23 @@ class Group extends React.Component{
     })
   }
 
-  onKeyUp = e => {
+  handleOnKeyUp = e => {
     //console.log(e.target.value)
     this.setState({
       discussion: e.target.value
     })
   }
 
+  txtDiscussion = React.createRef()
   handleAddDiscussion = e => {
     e.preventDefault()
+    //e.currentTarget.reset()
+    this.txtDiscussion.current.value = ''
     const params = {
-      entry: { description: this.state.discussion },
+      entry: {
+        description: this.state.discussion,
+        timestamp: (new Date()).getTime()
+      },
       group_addr: this.props.id,
     }
     Hc({
@@ -48,7 +54,7 @@ class Group extends React.Component{
       params,
       callback: response => {
         // console.log( response )
-        this.setState({ discussion:'' })
+        
         this.loadDiscussions()
       }
     })
@@ -113,8 +119,9 @@ class Group extends React.Component{
                 <textarea 
                   defaultValue={this.state.discussion}
                   name="discussion" 
-                  onKeyUp={this.onKeyUp} 
+                  onKeyUp={this.handleOnKeyUp} 
                   placeholder="type here your publication"
+                  ref={this.txtDiscussion}
                   />
                 <div>
                   <button type="submit">Publish</button>

@@ -3,7 +3,7 @@ import './ProfileData.scss'
 import Avatar from '../../../../components/Avatar/Avatar'
 import Stars from '../../../../components/Stars/Stars'
 
-export default function ProfileData(){
+export default function ProfileData(props){
   return(
     <div className="profile-data">
 
@@ -16,8 +16,8 @@ export default function ProfileData(){
         />
         <div className="data-profile">
           <div className="name-user">
-            <span className="name">Name</span>
-            <span>@USER</span>
+            <span className="name">{props.username}</span>
+            <span>@{props.username}</span>
           </div>
           <span className="id">ID: 1243855</span>
           <span>E-mail: </span>

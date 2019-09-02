@@ -3,7 +3,7 @@ import {Switch,Route} from 'react-router-dom'
 import './SidebarMenu.scss'
 import MyProfileSidebarMenu from '../../views/MyProfile/SidebarMenu/MyProfileSidebarMenu'
 
-import Logo from '../../images/Logo.png'
+import Logo from '../../images/Planet Logo V2.png'
 
 export default class SidebarMenu extends Component{
   state ={ 

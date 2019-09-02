@@ -18,7 +18,7 @@ export default class Main extends Component{
           <section>
             <Switch>
               <Route exact path="/" render={()=>(<MyProfile/>)}/>
-              <Route exact path="/profile" render={()=>(<Profile />)} />
+              <Route exact path="/profile/:id" render={({match})=>(<Profile id={match.params.id}/>)} />
               <Route exact path="/people" render={()=>(<People />)} />
               <Route path="/chat/:id" render={({match})=>(<Chat id={match.params.id} />)} />
               <Route path="/chat" render={()=>(<Chat />)} />

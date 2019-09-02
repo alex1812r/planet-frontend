@@ -1,0 +1,43 @@
+.modal{
+  //display: none;
+  transition: .5s;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 0;
+  background: #ccc9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  button.close-modal{
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+    background: rgba(red,.4);
+    color: white;
+    border-radius: 50%;
+    //width: 30px;
+    //height: 30px;
+    padding: 5px 10px;
+    border:0;
+    &:hover{
+      border:0;
+      background: red;
+    }
+    
+  }
+  &.active{
+    height: 100%;
+    .window-modal{
+      display: block;
+      width: 40%;
+      height: 60%;
+      background: #fff;
+      border:1px solid #ccc;
+      border-radius: 10px;
+    }
+  }
+}
