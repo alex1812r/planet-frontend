@@ -9,7 +9,9 @@ import Modal from '../../components/Modal/Modal'
 class Groups extends React.Component{
   state ={
     filter:'',
-    modal:false
+    modal:false,
+    title:'',
+    description:''
   }
 
   filterObjects = ( str, arr ) => {
@@ -20,32 +22,36 @@ class Groups extends React.Component{
     })
   }
 
-  handleAddGroup = () => {
-    //let groupName = ''
-    
-    // do{
-    //   groupName = window.prompt('Insert Group Name')
-    // }while(groupName === '') 
+  handleAddGroup = e => {
+    e.preventDefault()    
+    const {title,description} = this.state
+    this.setState({
+      modal:false
+    })
+    Hc({
+      functionName: 'create_group',
+      params:{
+        entry:{
+          title,
+          description,
+          values: '',
+          goals: '',
+          purpose:'',
+          vision:''
+        }
+      },
+      callback: response => {
+        console.log(response)
+        this.reloadGroups()
+      }
+    })
+  }
 
-    // groupName && groupName !== ''  &&
-    
-    // Hc({
-    //   functionName: 'create_group',
-    //   params:{
-    //     entry:{
-    //       title: groupName,
-    //       description:'',
-    //       values: '',
-    //       goals: '',
-    //       purpose:'',
-    //       vision:''
-    //     }
-    //   },
-    //   callback: response => {
-    //     console.log(response)
-    //     this.reloadGroups()
-    //   }
-    // })
+  handleOnKeyUp = (e)=>{
+    const {name,value} = e.currentTarget
+    this.setState({
+      [name]: value
+    })
   }
 
   handleShowModal = () => {
@@ -84,6 +90,23 @@ class Groups extends React.Component{
         active={this.state.modal}
         handleShowModal={this.handleShowModal}
       >
+        <form id="form-add-group" onSubmit={this.handleAddGroup}>
+          <span className="title-form">Create New Group</span>
+          <input 
+            name="title" 
+            type="text" 
+            placeholder="Name Group"
+            onKeyUp={this.handleOnKeyUp}
+            required
+          />
+          <textarea name="description" placeholder="Who we are?" required/>
+          <textarea name="commons" placeholder="Commons" />
+          <textarea name="synergy" placeholder="synergy"/>
+          <textarea name="inmuneSystem" placeholder="Inmune System" />
+          <textarea name="social" placeholder="Social" />
+          <textarea name="test" placeholder="test"/>
+          <button type="submit">Add Group</button>
+        </form>
       </Modal>
       </>
     )

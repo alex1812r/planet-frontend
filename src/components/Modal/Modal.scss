@@ -1,5 +1,6 @@
 .modal{
   //display: none;
+  opacity: 0;
   transition: .5s;
   width: 100%;
   position: fixed;
@@ -30,9 +31,9 @@
     
   }
   &.active{
+    opacity: 1;
     height: 100%;
     .window-modal{
-      display: block;
       width: 40%;
       height: 60%;
       background: #fff;
