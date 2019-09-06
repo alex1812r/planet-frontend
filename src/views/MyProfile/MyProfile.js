@@ -35,15 +35,15 @@ class MyProfile extends Component {
   }
   render() {
     //console.log('this.props.user :', this.props.user);
-    const {username,address} = this.props.user 
+    const {username,address,description,name} = this.props.user 
     return (
       <section className="MyProfile">
         <div className="box">
           <TagMyProfile 
             id={address.substring(0,5)}
-            name={username}
+            name={name}
             userName={username}
-            description={this.state.description}
+            description={description || 'Holochain User'}
           />
         </div>
         <div className="box MyProfile-reputation">

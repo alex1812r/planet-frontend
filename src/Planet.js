@@ -50,13 +50,18 @@ class Planet extends React.Component{
     }while(username === '')
     Hc({
       functionName:'create_user',
-      params: {username, description: ''},
+      params: { username, description: '', name:'', avatar:'' },
       callback: response => {
         if(response.Ok){
           this.props.SaveUser({
             address: response.Ok,
             username,
+            name:'',
+            avatar:''
           })
+        }else{
+          console.log('response: ', response)
+          alert("Can't connect to server, please contact your sysadmin")
         }
       }
     })

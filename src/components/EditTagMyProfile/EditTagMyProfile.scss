@@ -1,0 +1,22 @@
+#FormEditProfile{
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+
+        .buttons-edit {
+            flex: 1;
+            align-self: flex-end;
+            flex-direction: row;
+        }
+
+        input{
+            margin-bottom: 8px
+        }
+        textarea{
+            margin-bottom: 8px
+        }
+}
+
