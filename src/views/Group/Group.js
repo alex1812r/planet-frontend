@@ -5,12 +5,13 @@ import Hc from '../../Helpers/HoloChain'
 
 import TagPeople from '../../components/TagPeople/TagPeople';
 import Discussion from '../../components/Discussions/Discussions'
+import GroupDescription from '../../components/GroupDescription/GroupDescription';
 
 class Group extends React.Component{
 
   state = {
     discussion:'',
-    groupDiscusions: []
+    groupDiscusions: [],
   }
 
   componentDidMount = () => {
@@ -66,7 +67,6 @@ class Group extends React.Component{
       const data = group[0] 
       return(
         <div className="group">
-          
           <section>
             <div className="data-group">
               <div className="name-group">
@@ -75,12 +75,13 @@ class Group extends React.Component{
                 <span>1.256 members</span>
               </div>
               <div className="about-more-group">
-                <button>Who we are?</button>
-                <button>Commons</button>
-                <button>Synergy</button>
-                <button>Immune system</button>
-                <button>Social</button>
-                <button>Test</button>
+                <GroupDescription 
+                  description={data.entry.description}
+                  commons={data.entry.commons}
+                  synergy={data.entry.synergy}
+                  inmune_system={data.entry.inmune_system}
+                  social={data.entry.social}
+                />
               </div>
             </div>
           </section>

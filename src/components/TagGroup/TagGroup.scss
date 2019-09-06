@@ -1,0 +1,30 @@
+.TagGroup-profile{
+  width: auto;
+  display: flex;
+  .avatar{
+    display: block;
+    > * {margin: 0;}
+  }
+  .data{
+    width: 0;
+    flex-grow: 1;
+    padding-left: .5rem;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      > .name{
+        width: auto;
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-right: .5rem; 
+      }
+      > .rol{
+        display: inline-block;
+        width: 0;
+        flex-grow: 1;
+        color: #ccc;
+      } 
+    }
+  }
+}

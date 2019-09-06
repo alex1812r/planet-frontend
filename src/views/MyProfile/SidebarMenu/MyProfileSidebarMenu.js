@@ -1,15 +1,16 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import './MyProfileSidebarMenu.scss'
 import Avatar from '../../../components/Avatar/Avatar'
 
-export default function MyProfileSidebarMenu(props){
+function MyProfileSidebarMenu(props){
   return(
-    <div className="sidebarMenu-profile">
+    <div className="sidebarMenu-MyProfile">
       <div className="user">
         <Avatar 
           width="100px"
         /> 
-        <span>user Name</span>     
+        <span>{props.user.username}</span>     
       </div>
       <section>
         <h4>Lorem Ipsum</h4>
@@ -24,3 +25,5 @@ export default function MyProfileSidebarMenu(props){
     </div>
   )
 }
+
+export default connect(({user})=>({user}),()=>({}))(MyProfileSidebarMenu)

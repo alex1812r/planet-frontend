@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {Switch,Route} from 'react-router-dom'
 import './SidebarMenu.scss'
 import MyProfileSidebarMenu from '../../views/MyProfile/SidebarMenu/MyProfileSidebarMenu'
+import ProfileSidebarMenu from '../../views/Profile/SidebarMenu/ProfileSidebarMenu'
 
 import Logo from '../../images/Planet Logo V2.png'
 
@@ -40,40 +41,12 @@ export default class SidebarMenu extends Component{
           </div>    
           <div className="sidebarMenu-menu">
             <Switch>
-              <Route exact path="/">{<MyProfileSidebarMenu />}</Route>
-              <Route exact path="/Profile">{<></>}</Route>
+              <Route exact path="/profile/:id">{<ProfileSidebarMenu />}</Route>
+              <Route>{<MyProfileSidebarMenu />}</Route>
             </Switch>
           </div>
         </div>
       </aside>
-      // <aside className={`sidebarMenu ${expand}`}>
-      //   <div className="header">
-      //     <div className="Title">
-      //       <h3>PLANET</h3>
-      //     </div>
-      //   </div>
-          // {/* <div className="user">
-          //   {this.props.avatar 
-          //   ? <img src="/" alt=""/> 
-          //   : <span className="img-test"></span>}
-          //   <span className="user-name">User Name</span>
-          // </div> */}
-          
-      //   {/* <section>
-      //     <div>
-      //       Lorem Ipsum
-      //     </div>
-      //     <a href="/">Dolor sit amet</a>
-      //     <a href="/">Dolor sit amet</a>
-      //   </section>
-      //   <section>
-      //     <div>
-      //       Lorem Ipsum
-      //     </div>
-      //     <a href="/">Dolor sit amet</a>
-      //     <a href="/">Dolor sit amet</a>
-      //   </section> */}
-      // {/* </aside> */}  
     )
   }
 } 

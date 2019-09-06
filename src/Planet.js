@@ -50,7 +50,7 @@ class Planet extends React.Component{
     }while(username === '')
     Hc({
       functionName:'create_user',
-      params: {username},
+      params: {username, description: ''},
       callback: response => {
         if(response.Ok){
           this.props.SaveUser({

@@ -1,0 +1,57 @@
+@import '../../sass/Colores.scss';
+
+section.progress-container{
+  padding: 0 .55rem;
+  .progress-bar{
+    position: relative;
+    width: 100%;
+    height: .4rem;
+    background-color: #ddd;
+    margin-bottom: .5rem;
+    > div.progress{
+      transition: .5s;
+      height: 100%;
+      background: $secondary;
+    }
+    .progress-circle{
+      position: absolute;
+      width: .8rem;
+      height: .8rem;
+      padding: .15rem;
+      border-radius: 50%;
+      border: .4rem solid $secondary;
+      top: 50%;
+      background-color: #fff;
+      transform: translate(-50%,-50%);
+      z-index: 1; 
+      &.end{
+        border: .4rem solid #ddd;
+        left: 100%;
+        z-index: 0;
+      }
+      &.start{
+        z-index: 0;
+        left:0;
+      }
+    }
+  }
+
+}
+.progress-levels{
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  span.progress-level{
+    display: block;
+    width: 33.333%;
+    font-size: .8rem;
+    color: rgb(168, 168, 168);
+    text-align: center;
+    &.start{
+      text-align: start;
+    }
+    &.end{
+      text-align: end;
+    }
+  }
+}

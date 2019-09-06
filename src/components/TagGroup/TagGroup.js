@@ -1,12 +1,12 @@
 import React from 'react'
-import './TagPeople.scss'
-import Avatar from '../Avatar/Avatar'
-import Hearts from '../Hearts/Hearts'
 import {Link} from 'react-router-dom'
+import './TagGroup.scss'
 
-export default function TagPeople(props){
+import Avatar from '../Avatar/Avatar'
+
+export default function TagGroup(props){
   return(
-    <div className="TagPeople-profile">
+    <div className="TagGroup-profile">
       {
         props.active ? 
         <Avatar 
@@ -28,14 +28,9 @@ export default function TagPeople(props){
             <Link to={props.url} className="name">{props.name}</Link> 
             : <span className="name">{props.name || 'no name'}</span>
           }
-          
-          {props.reputation &&
-            <Hearts 
-              rate={props.reputation}
-            />
-          }
+          <span className="rol">{props.rol || 'ADMIN' }</span>
         </div>
-        <span>@{props.username || 'no_username'}</span>
+        <span>{props.nMembers || 0} members</span>
       </div>
     </div>
   )

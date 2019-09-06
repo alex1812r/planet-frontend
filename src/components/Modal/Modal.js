@@ -2,10 +2,11 @@ import React from 'react'
 import './Modal.scss'
 
 export default function Modal(props){
+  const size = props.size ? props.size : ''
   return(
     <div className={'modal ' + (props.active ? 'active' : '')}>
-      <button onClick={props.handleShowModal} className="close-modal">X</button>
-      <div className="window-modal">
+      <button onClick={props.hide} className="btn-close-modal">X</button>
+      <div className={`window-modal ${size}`}>
         {props.children}
       </div>
     </div>

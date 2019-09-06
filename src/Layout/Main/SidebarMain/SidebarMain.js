@@ -4,6 +4,7 @@ import './SidebarMain.scss'
 
 import ChatList from '../../../components/ChatList'
 import MyProfile from '../../../views/MyProfile/sidebarMain/MyProfileSidebarMain'
+import Profile from '../../../views/Profile/SidebarMain/SidebarMainProfile'
 
 export default class SidebarMain extends Component {
 
@@ -47,7 +48,8 @@ export default class SidebarMain extends Component {
         <div className="wrap-sidebarMain">
           <Switch>
             <Route exact path="/" >{<MyProfile />}</Route>
-            <Route path="/chat" >{<ChatList />}</Route>
+            <Route exact path="/chat" >{<ChatList />}</Route>
+            <Route exact path="/profile/:id">{<Profile />}</Route>
           </Switch>
         </div>
 

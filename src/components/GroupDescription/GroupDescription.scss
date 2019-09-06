@@ -1,0 +1,30 @@
+@import '../../sass/Colores';
+
+.GroupDescription{
+  button{
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .Window-Description{
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    >span{
+      color:$primary;
+      margin-bottom: 1rem;
+      font-size: 20px;
+      font-weight: bolder;
+      //border: 1px dashed red;
+      border-bottom:1px solid #ccc;
+      padding-bottom:.5rem; 
+      display: block;
+      text-align: center;
+    }
+    > div{
+      padding:0 .5rem;
+      //border: 1px dashed red;
+      text-align: justify;
+    }
+  }
+}

@@ -69,6 +69,6 @@ class MyProfile extends Component {
   }
 }
 
-const mapStateTopProps = state => ({user: state.user})
+const mapStateTopProps = ({user}) => ({user})
 
 export default connect(mapStateTopProps,()=>({}))(MyProfile)

@@ -9,7 +9,7 @@ class Discussion extends React.Component {
   state ={
     comment: String,
     viewComments: false,
-    comments: Array
+    comments: []
   }
 
   componentDidMount = () => {
@@ -64,6 +64,7 @@ class Discussion extends React.Component {
     const author = this.props.people.filter(u => (
       u.entry && u.entry.address === this.props.author
     ))
+    const date = new Date(this.props.date)
     return(
       <div className="msj-discussion">
         <Avatar width="50px" />
@@ -72,8 +73,17 @@ class Discussion extends React.Component {
             <div className="identification-msj">
               <h4>{author[0].entry && author[0].entry.username}</h4>
               <Hearts reputation={this.props.reputation} />
-              <span className="date-msj">{this.props.date}</span>
-            </div>
+              <span className="date-msj">{
+                (new Date()).getDay()  === date.getDay() 
+                  ? 
+                    date.getHours() / 2 + ':'+ 
+                    date.getMinutes()
+                  :
+                    date.getDay().toString()+'/'+
+                    date.getMonth().toString()+'/'+
+                    date.getFullYear().toString()
+                }</span>
+            </div>̣
             <div className="controls-msj">
               <button>A</button>
               <button>B</button>
@@ -82,7 +92,7 @@ class Discussion extends React.Component {
           </div>
           <p>{this.props.description}</p>
           <button onClick={this.handleViewComments}>
-            Comments <span style={{fontWeight:'bolder'}}>{this.state.comments.length}</span></button>
+            Comments <span style={{fontWeight:'bolder'}}>{this.state.comments.length }</span></button>
           { this.state.viewComments &&
           
             <div className="comments">
