@@ -13,12 +13,14 @@ export default function TagPeople(props){
           width="50px" 
           withCircle 
           withOutBorder={props.withOutBorder}
+          avatar={props.avatar}
           />
         : <Avatar 
             width="50px" 
             withCircle 
             borderBlue
             withOutBorder={props.withOutBorder}
+            avatar={props.avatar}
           />
       }
       <div className="data">

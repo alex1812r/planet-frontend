@@ -10,13 +10,19 @@
         overflow: auto; 
         padding-bottom: .6em;
         div{
-            width: 55%;
+            // width: 55%;
             margin-left: 2.5%;
             margin-right: 2.5%;
             padding: .6em;
             border-radius: .7em;
-            background-color: #eee;
             margin-top:.6em;
+            
+        }
+        div .messages-ind{
+            background-color: #eee;
+            margin-top: 0;
+            overflow-wrap: break-word;
+            max-width: 77%;
         }
         section{
             text-align: center;

@@ -3,6 +3,7 @@ import Discussion from './Discussion'
 import './Discussions.scss'
 
 export default function Discussions(props){
+  console.log('props.publications', props.publications)
   return(
     <div className="discussion">
       {

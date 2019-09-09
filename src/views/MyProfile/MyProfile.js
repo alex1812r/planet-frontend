@@ -35,7 +35,7 @@ class MyProfile extends Component {
   }
   render() {
     //console.log('this.props.user :', this.props.user);
-    const {username,address,description,name} = this.props.user 
+    const {username,address,description,name, avatar} = this.props.user 
     return (
       <section className="MyProfile">
         <div className="box">
@@ -44,6 +44,7 @@ class MyProfile extends Component {
             name={name}
             userName={username}
             description={description || 'Holochain User'}
+            avatar={avatar}
           />
         </div>
         <div className="box MyProfile-reputation">

@@ -89,8 +89,9 @@ class Group extends React.Component{
           <section>
             <div className="people-group">
               <TagPeople 
-                name="Name"
-                username="userName"
+                name={this.props.user.name}
+                username={this.props.user.username}
+                avatar={this.props.user.avatar}
                 withOutBorder
               />
               <div>
@@ -139,7 +140,7 @@ class Group extends React.Component{
   }
 }
 
-const mapStateToProps = ({groups}) => ({groups}) 
+const mapStateToProps = ({groups, user}) => ({groups, user}) 
 
 const mapDispatchToProps = dispatch => ({
   SaveGroups: (data =[]) => {

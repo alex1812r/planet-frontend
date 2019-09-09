@@ -16,7 +16,7 @@ const compress = file => {
                 }
             })
         }
-        const width = 500
+        const width = 100
         const fileName = file.name
         const reader = new FileReader()
         reader.readAsDataURL(file)

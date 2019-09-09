@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import compress from  '../../Helpers/Resizer'
+import iconAvatar from '../../images/PROFILEPIC.png'
 
 class EditAvatar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { file: '',imagePreviewUrl: '' }
+  state = {
+    file: '',
+    imagePreviewUrl: ''
   }
   async handleImageChange(e) {
     e.preventDefault()
@@ -24,19 +25,15 @@ class EditAvatar extends Component {
     // const circle = this.props.withCircle ? 'circle' : ''
     // const lineBlue = this.props.borderBlue ? 'blue' : ''
     // const withOutBorder = this.props.withOutBorder ? 'border-none' : '' ;
-
     let { imagePreviewUrl } = this.state
-    console.log('this.state', this.state)
-    let imagePreview = null
     return ( 
-      
       <>
         <div className="avatar">
           <div className="img-avatar">
-          <img src={imagePreviewUrl ? imagePreviewUrl : null } alt="avatar" style={{width:'100px', height:'100px'}} onClick={e=>document.getElementById('myCheck').dispatchEvent(new MouseEvent("click"))}/>
+          <img src={imagePreviewUrl || this.props.preview || iconAvatar } alt="avatar" style={{width:'100px', height:'100px'}} onClick={e=>document.getElementById('myCheck').dispatchEvent(new MouseEvent("click"))}/>
             {/* <span className={`${circle} ${lineBlue} ${withOutBorder}`} style={{width:`${width}`,height:`${width}`}} onClick={e=>document.getElementById('myCheck').dispatchEvent(new MouseEvent("click"))}></span> */}
             {
-              imagePreview
+              // imagePreview
             }
             <input type="file" id="myCheck" style={{display:'none'}}  onChange={(e)=>this.handleImageChange(e)}/>
           </div>

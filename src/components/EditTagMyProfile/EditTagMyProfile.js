@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import './EditTagMyProfile.scss';
+import React, { Component } from 'react'
+import './EditTagMyProfile.scss'
 import {connect} from 'react-redux'
+
 import Hc from '../../Helpers/HoloChain'
-import EditAvatar from './EditAvatar';
+import EditAvatar from './EditAvatar'
 
 class EditTagMyProfile extends Component {
     constructor(props) {
@@ -43,7 +44,10 @@ class EditTagMyProfile extends Component {
             this.props.otherFunction()
             this.props.onEdit()
       }
-    render() { 
+    render() {
+        console.log('rendering')
+        console.log('this.props.user', this.props.user)
+
         return ( 
             <>
             <EditAvatar
@@ -53,6 +57,7 @@ class EditTagMyProfile extends Component {
              buttonValue="Edit Profile"
              onEdit={this.props.onEdit}
              changeAvatar={this.changeAvatar}
+             preview={this.props.user.avatar}
             />
             <form id="FormEditProfile" onSubmit={this.handleEditProfile}>
                 <input
@@ -95,6 +100,9 @@ const mapDispatchToProps = dispatch => ({
           data
         })
     }
-  })
+})
+const mapStateToProps = ({user}) => ({
+    user
+})
 
-export default connect(({user})=>({user}),mapDispatchToProps)(EditTagMyProfile);
+export default connect(mapStateToProps,mapDispatchToProps)(EditTagMyProfile)

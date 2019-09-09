@@ -67,11 +67,11 @@ class Discussion extends React.Component {
     const date = new Date(this.props.date)
     return(
       <div className="msj-discussion">
-        <Avatar width="50px" />
+        <Avatar width="50px" avatar={author && author[0] && author[0].entry && author[0].entry.avatar}/>
         <div className="wrap-data-msj">
           <div className="data-msj">
             <div className="identification-msj">
-              <h4>{author[0].entry && author[0].entry.username}</h4>
+              <h4>{author && author[0] && author[0].entry && author[0].entry.username}</h4>
               <Hearts reputation={this.props.reputation} />
               <span className="date-msj">{
                 (new Date()).getDay()  === date.getDay() 

@@ -2,7 +2,7 @@ import React,{ Component } from 'react'
 import { connect } from 'react-redux'
 import plane from '../../icons/Chat-paper-plane.png'
 import Hc from '../../Helpers/HoloChain'
-
+import icono from '../../images/PROFILEPIC.png'
 import './Chat.scss'
 
 const Prompt = ({onSend, onChange, refer, disabled}) => (
@@ -93,9 +93,12 @@ class Chat extends Component{
                         this.props.id ?
                             messages.length?
                                 messages.map((t,i)=>(
-                                    <div key={i}>
-                                        {t.entry.content}
+                                    <>
+                                    <div key={i} style={{display:'flex'}}>
+                                        <span><img src={icono} alt='avatar' style={{width:'45px', borderRadius: '50%'}}/></span>
+                                        <div className='messages-ind'>{t.entry.content}</div>
                                     </div>
+                                    </>
                                     ))
                             :
                                 <section>Say hello!</section>

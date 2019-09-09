@@ -9,6 +9,7 @@ function MyProfileSidebarMenu(props){
       <div className="user">
         <Avatar 
           width="100px"
+          avatar={props.user.avatar}
         /> 
         <span>{props.user.username}</span>     
       </div>

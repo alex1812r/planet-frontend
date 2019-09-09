@@ -12,6 +12,7 @@ export default function TagGroupGroups(props){
             name={g.name}
             nMembers={g.nMembers}
             rol={g.rol}
+            key={i}
           />
         ))
       }
