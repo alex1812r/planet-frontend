@@ -83,6 +83,8 @@ class Chat extends Component{
         }
     }
     render(){
+        console.log('this.props', this.props)
+          
         const messages = this.state.texts
         let currentChannel = this.props.id && this.props.channels.length > 0 && this.props.channels.filter(c=>c.address===this.props.id)[0]
         return (
@@ -92,14 +94,17 @@ class Chat extends Component{
                     {
                         this.props.id ?
                             messages.length?
-                                messages.map((t,i)=>(
-                                    <>
-                                    <div key={i} style={{display:'flex'}}>
-                                        <span><img src={icono} alt='avatar' style={{width:'45px', borderRadius: '50%'}}/></span>
-                                        <div className='messages-ind'>{t.entry.content}</div>
-                                    </div>
-                                    </>
-                                    ))
+                                messages.map((t,i)=>{
+                                    let owner = this.props.people.filter(p=>p.entry.address===t.entry.author)[0]
+                                    return (
+                                            <div key={i} style={{display:'flex'}}>
+                                                <span>
+                                                    <img src={(owner && owner.entry.avatar) || icono} alt='avatar' style={{height:'45px',width:'45px', borderRadius: '50%'}}/>
+                                                </span>
+                                                <div className='messages-ind'>{t.entry.content}</div>
+                                            </div>
+                                        )
+                                    })
                             :
                                 <section>Say hello!</section>
                         :
@@ -113,10 +118,11 @@ class Chat extends Component{
 }
 
 export default connect(
-    ({chat, user, channels}) => ({
+    ({chat, user, channels, people}) => ({
         chat,
         user,
-        channels
+        channels,
+        people
     }),
     dispatch => ({
 
