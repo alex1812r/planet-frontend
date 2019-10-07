@@ -1,1 +1,1 @@
-export const remoteIP = '35.239.195.221'
+export const remoteIP = '34.67.104.129'
