@@ -22,7 +22,7 @@ function Profile(props){
           </div>
           <h4>About  Me</h4>
           <p>
-            21yo developer from Venezuela, holochain developer, AI amateur and full-stack developer.
+            Developer from Venezuela, holochain developer, AI amateur and full-stack developer.
           </p>
         </div>
       </div>

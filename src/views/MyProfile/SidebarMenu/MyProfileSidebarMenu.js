@@ -14,14 +14,14 @@ function MyProfileSidebarMenu(props){
         <span>{props.user.username}</span>     
       </div>
       <section>
-        <h4>Lorem Ipsum</h4>
-        <a href="/">Dolor sit amet</a>
-        <a href="/">Dolor sit amet</a>
+        <h4>Interest you</h4>
+        <a href="/">Notifications</a>
+        <a href="/">Messages</a>
       </section>
       <section>
-        <h4>Lorem Ipsum</h4>
-        <a href="/">Dolor sit amet</a>
-        <a href="/">Dolor sit amet</a>
+        <h4>Making new friends</h4>
+        <a href="/">New groups</a>
+        <a href="/">New people</a>
       </section>
     </div>
   )
